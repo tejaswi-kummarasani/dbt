@@ -1,0 +1,17 @@
+# Replace 'my_postgres_project' with the 'profile' name from your dbt_project.yml
+my_dbt_project:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: postgres
+      password: password
+      port: 5432
+      dbname: postgres
+      schema: dev
+      threads: 4
+      
+      # Optional settings
+      connect_timeout: 10
+      retries: 1
