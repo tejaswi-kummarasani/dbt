@@ -1,0 +1,53 @@
+version: 2
+
+sources:
+  - name: raw_tables
+    schema: raw
+    database: postgres
+    tables:
+      - name: raw_customers
+        columns: 
+          - name: customer_id
+          - name: first_name
+          - name: last_name
+          - name: email
+          - name: phone
+          - name: created_at
+          - name: updated_at
+          - name: city
+      - name: raw_order_items
+        columns:
+          - name: order_item_id
+          - name: order_id
+          - name: product_id
+          - name: quantity
+          - name: unit_price
+          - name: created_at
+          
+      - name: raw_orders
+        columns:
+         - name: order_id
+         - name: customer_id
+         - name: order_status
+         - name: order_date
+         - name: total_amount
+         - name: created_at
+         - name: updated_at
+      - name: raw_payments
+        columns:
+          - name: payment_id
+          - name: order_id
+          - name: payment_method
+          - name: payment_status
+          - name: paid_amount
+          - name: paid_at
+          - name: payment_date
+      - name: raw_products
+        columns:
+         - name: product_id
+         - name: product_name
+         - name: category
+         - name: brand
+         - name: price
+         - name: created_at
+         - name: updated_at
