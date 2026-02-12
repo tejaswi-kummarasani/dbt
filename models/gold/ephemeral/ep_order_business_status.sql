@@ -9,7 +9,6 @@ select
         when o.order_status = 'delivered' then 'completed'
         else 'in_progress'
     end as business_status
-
 from {{ ref('orders') }} o
 left join {{ ref('ep_latest_payment') }} p
     on o.order_id = p.order_id
