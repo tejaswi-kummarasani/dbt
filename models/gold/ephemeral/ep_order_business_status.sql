@@ -13,3 +13,4 @@ select
 from {{ ref('orders') }} o
 left join {{ ref('ep_latest_payment') }} p
     on o.order_id = p.order_id
+    
